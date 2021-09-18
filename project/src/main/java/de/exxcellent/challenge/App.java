@@ -14,10 +14,15 @@ public final class App {
      */
     public static void main(String... args) {
 
+        WeatherDataAnalyser weatherDataAnalyser = new WeatherDataAnalyser();
+
+        String dayWithSmallestTempSpread = weatherDataAnalyser.analyseData();
+        System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
+
         // Your preparation code …
 
-        String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
-        System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
+//        String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
+
 
         String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
         System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
