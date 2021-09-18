@@ -10,12 +10,12 @@ import java.util.List;
 
 public class CsvStrategy implements ReadStrategy {
     @Override
-    public Object parse(String path) {
+    public Object parse(String path ,Class type) {
 
-        List<WeatherData> resultList = new ArrayList<>();
+        List<Object> resultList = new ArrayList<>();
 
         try {
-            resultList = new CsvToBeanBuilder<WeatherData>(new FileReader(path)).withType(WeatherData.class).build().parse();
+            resultList = new CsvToBeanBuilder<>(new FileReader(path)).withType(type).build().parse();
         }
         catch (FileNotFoundException e){
             e.printStackTrace();
